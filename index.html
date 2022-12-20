@@ -17,7 +17,41 @@
   <body>
     <div class="container">
       <h1>Weather App</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+      <form>
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="Enter a city"
+              class="form-control search-input"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" class="btn btn-primary w-100" value="Search" />
+          </div>
+        </div>
+      </form>
+      <div class="WeatherInfo">
+        <div class="row">
+          <div class="col-6">
+            <h1>Barrancabermeja</h1>
+            <ul>
+              <li><span> Tue 08:47</span>, few clouds</li>
+              <li>
+                Humidity: <strong>89%</strong>, Wind: <strong>1.03 km/h</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-8">
+            <div class="temperature-container d-flex justify-content-end">
+              <canvas width="52" height="52"></canvas>
+              <div>
+                <span class="temperature">26</span><span class="unit">°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
