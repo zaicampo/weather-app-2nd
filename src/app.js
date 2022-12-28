@@ -34,8 +34,17 @@ function showTemperature(response) {
   );
 }
 
-let apiKey = "at240d73co4ff57d3fa69eea1eb8a55f";
-let city = "Cartagena";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "at240d73co4ff57d3fa69eea1eb8a55f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-axios.get(apiUrl).then(showTemperature);
+function visibleCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  search(city);
+}
+
+let newCity = document.querySelector("#city-form");
+newCity.addEventListener("submit", visibleCity);
