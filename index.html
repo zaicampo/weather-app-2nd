@@ -16,10 +16,9 @@
   </head>
   <body>
     <div class="container" id="weather-app">
-      <h1>Weather App</h1>
       <form>
         <div class="row">
-          <div class="col-9">
+          <div class="col-9" id="city-search">
             <input
               type="search"
               placeholder="Enter a city"
@@ -27,19 +26,23 @@
             />
           </div>
           <div class="col-3">
-            <input type="submit" class="btn btn-primary w-100" value="Search" />
+            <input
+              type="submit"
+              class="btn btn-primary w-100"
+              id="button-search"
+              value="Search"
+            />
           </div>
         </div>
       </form>
       <div class="WeatherInfo">
         <div class="row">
-          <div class="col-6">
-            <h1>Barrancabermeja</h1>
+          <div class="col-6" id="nowWeather">
+            <h1 id="city-name">Barrancabermeja</h1>
             <ul>
               <li><span> Tue 08:47</span>, few clouds</li>
-              <li>
-                Humidity: <strong>89%</strong>, Wind: <strong>1.03 km/h</strong>
-              </li>
+              <li>Humidity: <strong>89%</strong></li>
+              <li>Wind: <strong>1.03 km/h</strong></li>
             </ul>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-8">
@@ -56,7 +59,7 @@
                 <div class="forecast-time">Tue</div>
                 <canvas width="38" height="38"></canvas>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">33°</span
+                  <span class="forecast-temperature-max">33° </span
                   ><span class="forecast-temperature-min">22°</span>
                 </div>
               </div>
@@ -66,7 +69,7 @@
                 <div class="forecast-time">Wed</div>
                 <canvas width="38" height="38"></canvas>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">33°</span
+                  <span class="forecast-temperature-max">33° </span
                   ><span class="forecast-temperature-min">22°</span>
                 </div>
               </div>
@@ -76,7 +79,7 @@
                 <div class="forecast-time">Thu</div>
                 <canvas width="38" height="38"></canvas>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">32°</span
+                  <span class="forecast-temperature-max">32° </span
                   ><span class="forecast-temperature-min">23°</span>
                 </div>
               </div>
@@ -86,7 +89,7 @@
                 <div class="forecast-time">Fri</div>
                 <canvas width="38" height="38"></canvas>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">32°</span
+                  <span class="forecast-temperature-max">32° </span
                   ><span class="forecast-temperature-min">22°</span>
                 </div>
               </div>
@@ -96,7 +99,7 @@
                 <div class="forecast-time">Sat</div>
                 <canvas width="38" height="38"></canvas>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">31°</span
+                  <span class="forecast-temperature-max">31° </span
                   ><span class="forecast-temperature-min">22°</span>
                 </div>
               </div>
