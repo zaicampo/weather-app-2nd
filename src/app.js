@@ -22,8 +22,10 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#canvas");
 
+  celsiusTemp = response.data.temperature.current;
+
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -46,5 +48,32 @@ function visibleCity(event) {
   search(city);
 }
 
+function fahrenheitConversion(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function celsiusConversion(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
 let newCity = document.querySelector("#city-form");
 newCity.addEventListener("submit", visibleCity);
+
+let fahrenheit = document.querySelector("#fah-unit");
+fahrenheit.addEventListener("click", fahrenheitConversion);
+
+let celsius = document.querySelector("#cel-unit");
+celsius.addEventListener("click", celsiusConversion);
+
+search("Bogota");
