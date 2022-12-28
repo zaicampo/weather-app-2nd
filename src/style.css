@@ -47,6 +47,13 @@ li {
   text-transform: capitalize;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .temperature {
   color: #212121;
   font-size: 70px;
